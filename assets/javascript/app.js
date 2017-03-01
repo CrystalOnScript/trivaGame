@@ -29,7 +29,7 @@ var questions = [
     radio.type = "radio";
     radio.name = name;
     radio.value = value;
-
+    form.appendChild(radio);
     form.appendChild(document.createTextNode(text[0]));
 
     var radio2 = document.createElement("input");
@@ -37,7 +37,7 @@ var questions = [
     radio2.name = name;
     radio2.value = value;
 
-    form.appendChild(radio);
+    
     form.appendChild(radio2);
 
 
@@ -45,11 +45,10 @@ var questions = [
     return form;
   }
 
-var display = document.getElementById("displayQuestions");
 
 for(i = 0; i < questions.length ; i++){
 
-	questionApp = questions[i];
+	
 	$("#displayQuestions").append("<p>"+ questions[i].question +"</p>");
 
 	var list = questions[i].choices;
@@ -58,7 +57,37 @@ for(i = 0; i < questions.length ; i++){
   	$("#displayQuestions").append(yes_button);
 
 
-}
+};
+
+
+
+ $("#submitBtn").on("click", function(){
+
+ 	var isRadio = $("input[type = 'radio']");
+ 	console.log(isRadio);
+
+ 
+ 	// loop through questions
+ 	for(i = 0; i < isRadio.length ; i++){
+
+ 		if(isRadio.checked === true){
+ 		console.log("is checked");
+ 	};
+ };
+
+ 	// get user input value from radio buttons
+
+
+ 	// compare user input value with correct answers
+
+ 	// return how many right
+
+ 	// return how many wrong
+
+ 	// return how many unanswered 
+
+ });
+
 
 
 	
