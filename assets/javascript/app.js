@@ -30,9 +30,18 @@ var questions = [
     radio.name = name;
     radio.value = value;
 
-    form.appendChild(radio);
+    form.appendChild(document.createTextNode(text[0]));
 
-    form.appendChild(document.createTextNode(text));
+    var radio2 = document.createElement("input");
+    radio2.type = "radio";
+    radio2.name = name;
+    radio2.value = value;
+
+    form.appendChild(radio);
+    form.appendChild(radio2);
+
+
+    form.appendChild(document.createTextNode(text[1]));
     return form;
   }
 
