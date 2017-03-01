@@ -48,8 +48,6 @@ for(i = 0; i < questions.length; i++){
   	radio_home.appendChild(yes_button);
 
 
-
-
 	};
 
 
