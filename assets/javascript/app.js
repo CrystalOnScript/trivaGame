@@ -22,8 +22,6 @@ var questions = [
 
 
 
- var radio_home = document.getElementById("displayQuestions");
-
   function makeRadioButton(name, value, text) {
 
     var form = document.createElement("form");
@@ -38,17 +36,23 @@ var questions = [
     return form;
   }
 
-for(i = 0; i < questions.length; i++){
-	
+var display = document.getElementById("displayQuestions");
+
+for(i = 0; i < questions.length ; i++){
+
+	questionApp = questions[i];
+	$("#displayQuestions").append("<p>"+ questions[i].question +"</p>");
+
 	var list = questions[i].choices;
 
-	console.log(questions[i].choices);
-
 	var yes_button = makeRadioButton("yesbutton", "yes", list);
-  	radio_home.appendChild(yes_button);
+  	$("#displayQuestions").append(yes_button);
 
 
-	};
+}
+
+
+	
 
 
 
