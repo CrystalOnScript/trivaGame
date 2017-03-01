@@ -1,0 +1,11 @@
+body{
+	background-image: url("../images/greyfloral.png");
+}
+
+.bluebackground{
+	background-color: #2F7F69;
+}
+
+input[type="radio"] {
+  margin: 5px 5px 15px 15px;
+}
