@@ -26,9 +26,21 @@ for(i = 0; i < questions.length ; i++){
 var choiceArray = questions[i].choices;
 }
 
-console.log(choiceArray);
+for(i = 0; i < choiceArray.length ; i++){
+	console.log("choiceArray" + i);
+	trueOrFalse = i;
+}
 
-console.log(choiceArray.indexOf("true"));
+
+
+
+
+
+
+var choiceTrue = choiceArray.indexOf("true");
+var choiceFalse = choiceArray.indexOf("false");
+
+console.log(choiceFalse);
 
  function makeRadioButton(name, value, text) {
 
@@ -37,6 +49,7 @@ console.log(choiceArray.indexOf("true"));
     radio.type = "radio";
     radio.name = name;
     radio.value = value;
+    radio.class = choiceTrue;
   
     form.appendChild(radio);
     form.appendChild(document.createTextNode(text[0]));
@@ -45,7 +58,8 @@ console.log(choiceArray.indexOf("true"));
     radio2.type = "radio";
     radio2.name = name;
     radio2.value = value;
-    
+    radio2.class = choiceFalse;
+
     form.appendChild(radio2);
 
 
@@ -53,20 +67,27 @@ console.log(choiceArray.indexOf("true"));
     return form;
   };
 
+// var trueOrFalse = choiceArray.indexOf();
 
 for(i = 0; i < questions.length ; i++){
 
-	
+	var list = questions[i].choices;	
 	$("#displayQuestions").append("<p>"+ questions[i].question +"</p>");
 
-	var list = questions[i].choices;
-
-	
-	var yes_button = makeRadioButton("yes", "yesyes", list);
-  	$("#displayQuestions").append(yes_button);
-
+	// for(k = 0; k < choiceArray.length ; k++){
+		
+		var yes_button = makeRadioButton("yes", trueOrFalse, list);
+  	
+	// };
+		$("#displayQuestions").append(yes_button);
 
 };
+
+
+
+$(".radioButton").on("click", function(){
+	console.log($(this))
+});
 
 var isRadio = $("input[type = 'radio']");
  	console.log(isRadio);
