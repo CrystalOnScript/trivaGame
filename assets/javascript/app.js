@@ -2,6 +2,8 @@ var right = 0;
 var wrong = 0;
 var unanswered = 0;
 
+
+
 var questions = [
 	{
 	question: "A full dishwasher will use less water than washing the dishes by hand.",
@@ -20,15 +22,22 @@ var questions = [
 	}
 ];
 
+for(i = 0; i < questions.length ; i++){
+var choiceArray = questions[i].choices;
+}
 
+console.log(choiceArray);
 
-  function makeRadioButton(name, value, text) {
+console.log(choiceArray.indexOf("true"));
+
+ function makeRadioButton(name, value, text) {
 
     var form = document.createElement("form");
     var radio = document.createElement("input");
     radio.type = "radio";
     radio.name = name;
     radio.value = value;
+  
     form.appendChild(radio);
     form.appendChild(document.createTextNode(text[0]));
 
@@ -36,14 +45,13 @@ var questions = [
     radio2.type = "radio";
     radio2.name = name;
     radio2.value = value;
-
     
     form.appendChild(radio2);
 
 
     form.appendChild(document.createTextNode(text[1]));
     return form;
-  }
+  };
 
 
 for(i = 0; i < questions.length ; i++){
@@ -53,27 +61,30 @@ for(i = 0; i < questions.length ; i++){
 
 	var list = questions[i].choices;
 
-	var yes_button = makeRadioButton("yesbutton", "yes", list);
+	
+	var yes_button = makeRadioButton("yes", "yesyes", list);
   	$("#displayQuestions").append(yes_button);
 
 
 };
 
-
+var isRadio = $("input[type = 'radio']");
+ 	console.log(isRadio);
+	
 
  $("#submitBtn").on("click", function(){
 
- 	var isRadio = $("input[type = 'radio']");
- 	console.log(isRadio);
 
- 
  	// loop through questions
  	for(i = 0; i < isRadio.length ; i++){
 
- 		if(isRadio.checked === true){
- 		console.log("is checked");
+ 		if(isRadio[i].checked === true){
+ 		console.log(isRadio[i]);
+ 		};
+
  	};
- };
+ });
+
 
  	// get user input value from radio buttons
 
@@ -86,7 +97,7 @@ for(i = 0; i < questions.length ; i++){
 
  	// return how many unanswered 
 
- });
+
 
 
 
