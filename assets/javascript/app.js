@@ -26,6 +26,21 @@ $(document).ready(function(){
 		choices: ["true", "false"],
 		correctAnswer: 1,
 		},
+		{
+		question: "The amount of water on Earth is constant, and continually recycled over time",
+		choices: ["true", "false"],
+		correctAnswer: 0,	
+		},
+		{
+		question: "Aluminum can only be recycled once.",
+		choices: ["true", "false"],
+		correctAnswer: 1,	
+		},
+		{
+		question: "If the entire world lived like the average American, we’d need 5 planets to provide enough resources",
+		choices: ["true", "false"],
+		correctAnswer: 0,	
+		}
 
 	];
 
@@ -44,8 +59,8 @@ for(i = 0; i < questions.length ; i++){
 
 		var secondpage = function(){
 
-	  setTimeout(tenSeconds, 1000*2);
-	  var timeUpVar = setTimeout(timeUp, 1000*3);
+	  setTimeout(tenSeconds, 1000*20);
+	  var timeUpVar = setTimeout(timeUp, 1000*30);
 	  timeUpVar;
 
 	  var stopTimeout = function(){
@@ -56,14 +71,14 @@ for(i = 0; i < questions.length ; i++){
 
 	      function tenSeconds() {
 
-	        $("#timeDiv").html("<h2>About 5 Seconds Left!</h2>");
-	        console.log("5 seconds left");
+	        $("#timeDiv").html("<h4>You have 10 seconds left!</h4>");
+	        console.log("10 seconds left");
 
 	      }
 
 
 	      function timeUp() {
-	        $("#timeDiv").html("<h2>Times Up!</h2>");
+	        $("#timeDiv").html("<h4>Times Up!</h4>");
 	        console.log("done");
 	        for(i = 0; i < isRadio.length ; i++){
 
@@ -98,7 +113,7 @@ for(i = 0; i < questions.length ; i++){
 			$("#bigDiv").hide();
 			$("#timeDiv").hide();
 			$("#finalDiv").show();
-			$("#finalDiv").html("<h1>Finished!</h1><p>Your Score</p><p>Right: "+ right +"</p><p>Wrong: "+wrong+"</p>")
+			$("#finalDiv").prepend("<h1>Finished!</h1><p>Your Score</p><p>Right: "+ right +"</p><p>Wrong: "+wrong+"</p>")
 
 	      }	
 
@@ -191,7 +206,7 @@ for(i = 0; i < questions.length ; i++){
 			$("#bigDiv").hide();
 			$("#timeDiv").hide();
 			$("#finalDiv").show();
-			$("#finalDiv").html("<h1>Finished!</h1><p>Your Score</p><p>Right: "+ right +"</p><p>Wrong: "+wrong+"</p>")
+			$("#finalDiv").prepend("<h1>Finished!</h1><p>Your Score</p><p>Right: "+ right +"</p><p>Wrong: "+wrong+"</p>")
 
 
 		 });

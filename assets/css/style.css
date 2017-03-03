@@ -13,14 +13,53 @@ input[type="radio"] {
 #bigDiv{
 	min-height: 500px;
 	padding: 30px;
+	
+
+}
+
+#finalDiv{
+	min-height: 300px;
+	padding: 30px;
+}
+
+#otherDiv{
+	min-height: 300px;
+	padding: 30px;
 }
 
 #timeDiv{
 	position: fixed;
 	top: 10px;
-	right: 10px;
-	width: 100px;
-	height: 100px;
-	background-color: blue;
-	background-opacity: 50;
+	right: 20px;
+	width: 150px;
+	height: 60px;
+	z-index: 1;
+	background-color: grey;
+	opacity: .5;
+}
+
+p{
+	color: white;
+	font-size: 20px;
+	font-family: 'Libre Franklin', sans-serif;
+
+}
+
+button{
+	color: black;
+}
+
+h1{
+	font-family: 'Dancing Script', cursive;
+	font-size: 60px;
+}
+
+h4{
+	font-family: 'Lobster Two', cursive;
+	color: white;
+}
+
+form{
+	font-size: 20px;
+	font-family: 'Libre Franklin', sans-serif;
 }
