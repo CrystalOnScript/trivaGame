@@ -49,7 +49,7 @@ $("#goBtn").on("click", function(){
 		$("#otherDiv").hide();
 		$("#finalDiv").hide();
 		$("#bigDiv").show();
-		$("#timeDiv").show();
+		$("#timeDiv").hide();
 	})
 for(i = 0; i < questions.length ; i++){
 	var choiceArray = questions[i].choices;
@@ -70,9 +70,10 @@ for(i = 0; i < questions.length ; i++){
 
 
 	      function tenSeconds() {
-
+	      	$("#timeDiv").show();
 	        $("#timeDiv").html("<h4>You have 10 seconds left!</h4>");
 	        console.log("10 seconds left");
+
 
 	      }
 
