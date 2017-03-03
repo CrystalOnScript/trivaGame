@@ -60,6 +60,40 @@ for(i = 0; i < questions.length ; i++){
 	      function timeUp() {
 	        $("#timeDiv").html("<h2>Times Up!</h2>");
 	        console.log("done");
+	        for(i = 0; i < isRadio.length ; i++){
+
+		 		// get user input value from radio buttons
+		 		if(isRadio[i].checked === true){
+		 		var int = parseInt(isRadio[i].value);	
+		 		userAnswer.push(int);	
+
+		 		};
+
+		 	};
+		 	 		console.log(userAnswer);
+
+		 	 // compare user input value with correct answers
+		 	for(i = 0; i < questionAnswer.length ;i++){
+
+		 		if(userAnswer[i] === questionAnswer[i]){
+		 			right++;
+		 		}
+
+
+		 		if(userAnswer[i] !== questionAnswer[i]){
+		 			wrong++;
+		 		};
+
+		 		console.log("right " + right);
+				console.log("wrong " + wrong);
+
+		 	};
+
+		 	$("#otherDiv").hide();
+			$("#bigDiv").hide();
+			$("#timeDiv").hide();
+			$("#finalDiv").show();
+			$("#finalDiv").html("<h1>Finished!</h1><p>Your Score</p><p>Right: "+ right +"</p><p>Wrong: "+wrong+"</p>")
 
 	      }	
 
