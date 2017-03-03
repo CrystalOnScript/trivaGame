@@ -45,7 +45,12 @@ for(i = 0; i < questions.length ; i++){
 		var secondpage = function(){
 
 	  setTimeout(tenSeconds, 1000*2);
-	  setTimeout(timeUp, 1000*3);
+	  var timeUpVar = setTimeout(timeUp, 1000*3);
+	  timeUpVar;
+
+	  var stopTimeout = function(){
+	  	clearTimeout(timeUpVar);
+	  };
 
 
 
@@ -151,7 +156,7 @@ for(i = 0; i < questions.length ; i++){
 
 		 $("#submitBtn").on("click", function(){
 
-
+		 	stopTimeout();
 		 	// loop through questions
 		 	for(i = 0; i < isRadio.length ; i++){
 
@@ -182,18 +187,17 @@ for(i = 0; i < questions.length ; i++){
 
 		 	};
 
+		 	$("#otherDiv").hide();
+			$("#bigDiv").hide();
+			$("#timeDiv").hide();
+			$("#finalDiv").show();
+			$("#finalDiv").html("<h1>Finished!</h1><p>Your Score</p><p>Right: "+ right +"</p><p>Wrong: "+wrong+"</p>")
+
 
 		 });
 
 		
 
-		$("#submitBtn").on("click", function(){
-			$("#otherDiv").hide();
-			$("#bigDiv").hide();
-			$("#timeDiv").hide();
-			$("#finalDiv").show();
-			$("#finalDiv").html("<h1>Finished!</h1><p>Your Score</p><p>Right: "+ right +"</p><p>Wrong: "+wrong+"</p>")
-		});
 	}	 
 
 
